@@ -27,5 +27,13 @@
         $('#userMessage').val("");
     });
 
+    $("#userMessage").keypress(function (event) {
+        if (event.which == 13) {
+            var message = $('#userMessage').val();
+            chat.server.send(message);
+            $('#userMessage').val("");
+        }
+    });
+
 });
 
